@@ -1,6 +1,7 @@
 # Wyze Cam V2 (WYZEC2)
 
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
+Installation video at https://youtu.be/1pSx_jaXfoE
 
 # Installation Steps
 
