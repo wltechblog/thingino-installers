@@ -14,11 +14,10 @@ Installation video at https://youtu.be/SX637mrp0R0
 6. Place the firware in the root of the sd card. Keep the other files from step 2 on the card as well.
 7. Cleanly unmount the sd card and put into the sd slot on the bottom of the camera
 8. Power up the camera
-9. Wait around 2 minutes and you should see the camera's new wireless network for provisioning it.
+9. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
 
 # Need help?
 
 Discord is your best bet if you run into any trouble! Our Discord channel: https://discord.gg/s6yJzhS4hD
 
 Check flash.txt in the root of the SD card after flashing to see the corresponding logs.
-
