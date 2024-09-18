@@ -4,6 +4,9 @@ This is a popular and current camera from Wyze, which normally retails for aroun
 Camera can be found at https://amzn.to/3zK7DoS
 Installation video at https://youtu.be/SX637mrp0R0
 
+# YOU MAY NEED TO DOWNGRADCE YOUR CAMERA'S FIRMWARE
+Newer versions of Wyze firmware no longer work with the installer. Please downgrade your device to 4.36.9.139 before attempting to flash. if it is not available in your app, you can find old firmware here: https://github.com/kohrar/Wyze-Firmwares/tree/master/v3
+
 # Installation Steps
 
 1. Format your SD card to fat32 (not exfat!)
