@@ -1,9 +1,10 @@
-# Wyze Cam V2 (WYZEC2)
+# Wyze Cam V2 (WYZEC2) and NEOS SmartCam
 
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
 Installation video at https://youtu.be/1pSx_jaXfoE
 
-NOTE: Do not attempt to run the installer a second time on a device!
+NOTE: Do not attempt to run the installer a second time on a device! If you need to switch to the other sensor firmware, edit /etc/os-release on the device and run sysupgrade -p
+
 
 # Installation Steps
 
