@@ -9,7 +9,7 @@ NOTE: Do not attempt to run the installer a second time on a device! If you need
 # Installation Steps
 
 1. Format your SD card to fat32 (not exfat!)
-2. Unzip the contents of wyze-v2.zip to the root of the sd card
+2. Unzip the contents of wyze-cam-2.zip to the root of the sd card
 3. Download the latest thingino firmware image for the wyze cam 2 from https://github.com/themactep/thingino-firmware/releases/tag/firmware 
 4. Rename the firmware file to autoupdate-full.bin and place in the root of the sd card
 5. Cleanly unmount the sd card and put into the sd slot on the bottom of the camera
