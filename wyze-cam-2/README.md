@@ -9,7 +9,7 @@ If you have trouble, jump on our Discord channel and we'll help you out!
 
 1. Format your SD card to fat32 (not exfat!)
 2. Unzip the contents of wyze-cam-2.zip to the root of the sd card
-3. Download both Thingino firmware images for the Wyze Cam 2 and place them on the sd card
+3. Download both Thingino firmware images for the Wyze Cam 2 and place them on the sd card. You can get them at https://thingino.com/
 4. Cleanly unmount the sd card and put into the sd slot on the bottom of the camera
 5. Hold down the reset button while plugging in, continue to hold until the status light turns blue, about 5 seconds.
 6. If everything is correct, the process takes 6 minutes 45 seconds in my testing.
