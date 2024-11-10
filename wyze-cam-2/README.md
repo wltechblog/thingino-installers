@@ -1,7 +1,7 @@
 # Wyze Cam V2 (WYZEC2) and NEOS SmartCam
 
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
-Installation video at https://youtu.be/1pSx_jaXfoE
+Installation video at https://www.youtube.com/watch?v=ifXObp2jhO0
 
 If you have trouble, jump on our Discord channel and we'll help you out!
 
