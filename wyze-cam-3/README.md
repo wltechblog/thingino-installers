@@ -4,7 +4,12 @@ This is a popular and current camera from Wyze, which normally retails for aroun
 Camera can be found at https://amzn.to/3zK7DoS
 Installation video at https://youtu.be/SX637mrp0R0
 
+# This process is not reversible
+
+With any third party firmware, the only way to revert to Wyze is to have taken a full backup of your flash chip first. 
+
 # YOU MAY NEED TO DOWNGRADE YOUR CAMERA'S FIRMWARE
+
 Newer versions of Wyze firmware no longer work with the installer. Please downgrade your device to 4.36.9.139 before attempting to flash. if it is not available in your app, you can find old firmware here: https://github.com/kohrar/Wyze-Firmwares/tree/master/v3 and the instructions for flashing it are here: https://support.wyze.com/hc/en-us/articles/360031490871-How-to-flash-your-Wyze-Cam-firmware-manually#Accordion-wyze-cam-v3-2
 
 # Installation Steps
