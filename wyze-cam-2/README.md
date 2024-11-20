@@ -1,3 +1,8 @@
+# Do you have a NEOS SMARTCAM?
+
+We are in need of a factory firmware image for this device. If you have one of these cams, it would help
+us greatly if you could join our discord and we can walk you through the steps os taking an image before you do this upgrade!
+
 # Wyze Cam V2 (WYZEC2) and NEOS SmartCam
 
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
