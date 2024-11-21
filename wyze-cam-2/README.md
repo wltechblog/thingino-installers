@@ -1,9 +1,3 @@
-# Do you have a NEOS SMARTCAM?
-
-We are in need of a factory firmware image for this device. If you have one of these cams, it would help
-us greatly if you could join our discord and we can walk you through the steps os taking an image before you do this upgrade!
-Discord link here: https://discord.gg/s6yJzhS4hD
-
 # Wyze Cam V2 (WYZEC2) and NEOS SmartCam
 
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
@@ -20,3 +14,4 @@ If you have trouble, jump on our Discord channel and we'll help you out!
 5. Hold down the reset button while plugging in, continue to hold until the status light turns blue, about 5 seconds.
 6. If everything is correct, the process takes 6 minutes 45 seconds in my testing.
 7. You should now see the camera's new wireless network for provisioning it.
+
