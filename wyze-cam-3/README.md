@@ -4,28 +4,27 @@ This is a popular and current camera from Wyze, which normally retails for aroun
 Camera can be found at https://amzn.to/3zK7DoS
 Installation video at https://youtu.be/SX637mrp0R0
 
-# This process is not reversible
+# This process IS reversible
 
-With any third party firmware, the only way to revert to Wyze is to have taken a full backup of your flash chip first. 
-
-# YOU MAY NEED TO DOWNGRADE YOUR CAMERA'S FIRMWARE
-
-Newer versions of Wyze firmware no longer work with the installer. Please downgrade your device to 4.36.9.139 before attempting to flash. if it is not available in your app, you can find old firmware here: https://github.com/kohrar/Wyze-Firmwares/tree/master/v3 and the instructions for flashing it are here: https://support.wyze.com/hc/en-us/articles/360031490871-How-to-flash-your-Wyze-Cam-firmware-manually#Accordion-wyze-cam-v3-2
+The first step of this installer will create a backup of your factory firmware, which can be used to revert back to Wyze if you need to.
+The factory firmware file is named combined_backup.bin and will be in WYZE_BACKUP_xxxxx/
+This backup is unique PER CAMERA, so if you don't save it somewhere yourself you won't be able to revert.
 
 # Installation Steps
 
 1. Format your SD card to fat32 (not exfat!)
 2. Unzip the contents of wyzev3-flasher.zip to the root of the sd card
-3. Insert the sd card into the camera and boot it up, wait 30 seconds and power it down.
-4. Remove the sd card and put into your pc, look for a new file named flash.txt. This will have the filename of the firmware you need for your device.
-5. Download the latest matching thingino firmware from : https://github.com/themactep/thingino-firmware/releases
-6. Place the firware in the root of the sd card. Keep the other files from step 2 on the card as well.
-7. Cleanly unmount the sd card and put into the sd slot on the bottom of the camera
-8. Power up the camera
-9. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
+3. Insert the sd card into the camera and boot it up.
+4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
+
+# Notes
+
+If you are flashing multiple cameras, you need to format and recreate the sd card each time. If you want the ability to revert, you need to copy the combined_backup.bin file from each device and note
+which one goes to which camera.
 
 # Need help?
 
 Discord is your best bet if you run into any trouble! Our Discord channel: https://discord.gg/s6yJzhS4hD
 
-Check flash.txt in the root of the SD card after flashing to see the corresponding logs.
+Some debug information is created on the SD during the process.
+
