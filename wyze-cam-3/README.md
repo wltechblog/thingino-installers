@@ -16,6 +16,7 @@ This backup is unique PER CAMERA, so if you don't save it somewhere yourself you
 2. Unzip the contents of wyzev3-flasher.zip to the root of the sd card
 3. Insert the sd card into the camera and boot it up.
 4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
+5. After setting up the camera in webui, make sure to update to current firmware as the included files are only updated periodically. You can upate via webui in `Tools->Sysupgrade tool` or via ssh using `sysupgrade -p`
 
 # Notes
 
