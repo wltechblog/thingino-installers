@@ -13,4 +13,6 @@ If you have trouble, jump on our Discord channel and we'll help you out!
 4. Hold down the reset button while plugging in, continue to hold until the status light turns blue, about 5 seconds.
 5. If everything is correct, the process takes just under 4 minutes.
 6. You should now see the camera's new wireless network for provisioning it.
+7. After setting up the camera in webui, make sure to update to current firmware as the included files are only updated periodically. You can upate via webui in `Tools->Sysupgrade tool` or via ssh using `sysupgrade -p`
+
 
