@@ -23,6 +23,17 @@ This backup is unique PER CAMERA, so if you don't save it somewhere yourself you
 If you are flashing multiple cameras, you need to format and recreate the sd card each time. If you want the ability to revert, you need to copy the combined_backup.bin file from each device and note
 which one goes to which camera.
 
+# Reversal Steps
+
+To revert back to the stock Wyze firmware:
+
+1. Ensure you're using the `combined_backup.bin` file that was generated from this exact camera. The files are not interchangable between cameras.
+2. Copy `combined_backup.bin` from the `WYZE_BACKUP_xxxxx/` folder to the root of the SD card.
+3. Rename `combined_backup.bin` to `autoupdate-full.bin`. This should be the only file on your SD card. You do not need any `.sha256` file.
+4. Insert the SD card into your camera and plug in the power cable.
+5. After a couple minutes the Wyze firmware will be restored. You do not need to manually reboot the camera.
+6. When you press the `SETUP` button on the camera you'll get the original Wyze "Ready to connect" audio prompt.
+
 # Need help?
 
 Discord is your best bet if you run into any trouble! Our Discord channel: https://discord.gg/s6yJzhS4hD
