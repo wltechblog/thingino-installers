@@ -2,7 +2,7 @@
 
 # Buy it at Amazon: https://amzn.to/3yTUFob
 
-# Installation video here: 
+# Installation video here: https://youtu.be/jCRiIljSWlw
 
 # NOTE
 
