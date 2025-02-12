@@ -6,7 +6,7 @@ Follow the README in the subdirectory named for your camera
 
 # More Info
 
-I have install videos for each model listed at https://www.youtube.com/@wltechblog6330
+I have install videos for each model listed at https://www.youtube.com/@wltechblog
 
 # DISCLAIMER
 
