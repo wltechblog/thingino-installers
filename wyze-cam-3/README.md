@@ -12,16 +12,16 @@ This backup is unique PER CAMERA, so if you don't save it somewhere yourself you
 
 # Installation Steps
 
-1. Format your SD card to fat32 (not exfat!)
-2. Unzip the contents of wyzev3-flasher.zip to the root of the sd card
-3. Insert the sd card into the camera and boot it up.
+1. Download the zip file for the wyze v3 from this repository
+2. Use a sd image burning software such as Balena Etcher to write the image to your sd card (any card 128MB or larger)
+3. Power off your camera and insert the sd card, thn power it on
 4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
-5. After setting up the camera in webui, make sure to update to current firmware as the included files are only updated periodically. You can upate via webui in `Tools->Sysupgrade tool` or via ssh using `sysupgrade -p`
+5. After setting up the camera in webui, make sure to do a full update to current firmware as the included files are only updated periodically. You can upate via webui in `Tools->Flash Operations` or via ssh using `sysupgrade -f`
 
 # Notes
 
-If you are flashing multiple cameras, you need to format and recreate the sd card each time. If you want the ability to revert, you need to copy the combined_backup.bin file from each device and note
-which one goes to which camera.
+If you are flashing multiple cameras, you need to copy and store the factory firmware backup file (combined_backup.bin), then use
+your sd image burner to burn a fresh installer each time.
 
 # Reversal Steps
 
