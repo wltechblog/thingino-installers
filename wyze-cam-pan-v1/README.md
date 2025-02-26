@@ -1,9 +1,7 @@
 # Wyze Cam Pan V1 (WYZECP1)
 
-# THIS IMAGE IS BEING TESTED, DON'T USE IT YET!
-
 This was a popular model for a long tiem and while I don't recommend buying a new one today, lots of folks already have them and they are plentiful in the used market.
-Installation video coming soon!
+Installation video: https://youtu.be/Y4oC-Tg-Rdw
 
 If you have trouble, jump on our Discord channel and we'll help you out!
 
