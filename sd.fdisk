@@ -1,0 +1,7 @@
+label: dos
+label-id: 0x08fa5877
+device: /dev/sda
+unit: sectors
+sector-size: 512
+
+/dev/sda1 : start=        2048, size=      245760, type=c
