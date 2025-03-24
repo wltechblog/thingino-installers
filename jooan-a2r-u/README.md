@@ -11,11 +11,11 @@ option of reverting to the factory firmware you will need to take a backup using
 # Instructions
 
 Follow along in the youtube video, but these are the steps:
-1. Download the jooan zip from this repo
-2. Use your favorite SD image burner to write it to SD
-3. Open Take the camera apart
-4. Insert your SD card
-5. Create a short on the spi flash chip pins 5 and 6
-6. Power up the cam. Wait 1.5 seconds and remove the short.
-7. Wait a minute and the camera will boot to Thingino.
-
+1. Take the camera apart
+2. Identify your WIFI chip, either Altobeam 6012bx or SSV6355
+3. Download the matching jooan zip from this repo
+4. Use your favorite SD image burner to write it to SD
+5. Insert your SD card
+6. Create a short on the spi flash chip pins 5 and 6
+7. Power up the cam. Wait 1.5 seconds and remove the short.
+8. Wait a minute and the camera will boot to Thingino.

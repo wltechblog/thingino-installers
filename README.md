@@ -2,7 +2,7 @@
 
 Files and tools for installing Thingino firmware on various supported camera models
 
-Follow the README in the subdirectory named for your camera
+# NOTE: Follow the README in the subdirectory named for your camera, THIS OVERRIDES WHAT I SHOW IN A VIDEO
 
 # A note about UPDATES
 
