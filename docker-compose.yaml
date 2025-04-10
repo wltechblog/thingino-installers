@@ -1,0 +1,12 @@
+services:
+  thingino-image-builder-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thingino-image-builder-dev
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - .:/home/thingino/bin
+    command: ["sleep","infinity"]
