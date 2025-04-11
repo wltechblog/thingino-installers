@@ -4,17 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y \
-    sudo \
-    curl \
-    git \
-    vim \
-    wget \
-    zip \
-    unzip \
-    dosfstools \
-    fdisk \
-    util-linux
+    apt-get install -y sudo curl git vim wget zip unzip dosfstools fdisk util-linux && \
+    apt-get install -y systemd udev
 
 # Create a new user "thingino" with a home directory and a bash shell,
 # and then create a "bin" directory in its home.

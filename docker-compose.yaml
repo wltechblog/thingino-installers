@@ -5,14 +5,12 @@ services:
       dockerfile: Dockerfile
     container_name: thingino-image-builder-dev
     restart: unless-stopped
-    cap_add:
-      - SYS_ADMIN
-      - SYSLOG
+    privileged: true
     environment:
       - TZ=America/New_York
-    devices:
-      - /dev/loop-control:/dev/loop-control
-      - /dev/loop0:/dev/loop0
     volumes:
       - .:/home/thingino/bin
+      - /sys:/sys
+      - /run:/run
+      - /dev:/dev
     command: ["sleep","infinity"]
