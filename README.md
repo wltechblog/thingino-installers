@@ -17,7 +17,7 @@ For support, jump over to the Hacker's Homestead discord channel! https://discor
 
 ## Want to build your own?
 
-The included script make_images.sh will create all the install images. Note that firmware images are cached between runs for speed and to
+The included script `make_installers.sh` will create all the install images. Note that firmware images are cached between runs for speed and to
 allow for version pinning.
 
 > Note that the script is intended to run on a Linux host.
