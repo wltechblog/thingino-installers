@@ -31,7 +31,7 @@ If you're not on Linux (say macOS), utilities such as `sfdisk` may not be availa
 ```
 
 This will build a container using the docker files in this repository and drop you in a bash shell.
-Next, simply run the `make_installer.sh` script as you would on a Linux host. `./docker-run.sh cleanup` will stop and remove the container.
+Next, simply run the `make_installers.sh` script as you would on a Linux host. `./docker-run.sh cleanup` will stop and remove the container.
 Run `./docker-run.sh` to see a list of available commands.
 
 ## DISCLAIMER
