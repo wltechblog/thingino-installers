@@ -257,5 +257,6 @@ close_image
 zip -o galayou-y4/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
 rm sd.img
 
-
+# Perform final cleanup
+rm -rf tmp mnt sd-base.img
 
