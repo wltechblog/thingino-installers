@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     cap_add:
       - SYS_ADMIN
+      - SYSLOG
     environment:
       - TZ=America/New_York
     devices:
