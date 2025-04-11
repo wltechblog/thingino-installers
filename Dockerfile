@@ -9,7 +9,12 @@ RUN apt-get update && \
     curl \
     git \
     vim \
-    wget
+    wget \
+    zip \
+    unzip \
+    dosfstools \
+    fdisk \
+    util-linux
 
 # Create a new user "thingino" with a home directory and a bash shell,
 # and then create a "bin" directory in its home.
