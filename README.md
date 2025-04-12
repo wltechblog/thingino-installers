@@ -6,8 +6,7 @@ Files and tools for installing Thingino firmware on various supported camera mod
 
 # A note about UPDATES
 
-Thingino is currently in the middle of a big change with some core details, and I suggest that you temporarily resist the urge to update to the current nightly build! I will
-post something on my YT channel when we're in the clear but remember the versions of firmware included in these installers should be solid while that process continues!
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
 
 # More Info
 
