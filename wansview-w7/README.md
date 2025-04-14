@@ -9,6 +9,8 @@
 These instructions are the *initial flash* from factory firmware to Thingino, and should not be confused with the instructions for unbricking!
 Also, Wansview has updated the W7 and newer models use the T23 processor instead of the T31. The only way to tell is to look inside. Follow this video: https://www.youtube.com/shorts/8dlMDv3GmZ0
 
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+
 # SD card install instructions:
 
 1. Format micro SD card using FAT32. exfat will not work!

@@ -11,6 +11,9 @@ The first step of this installer will create a backup of your factory firmware, 
 The factory firmware file is named combined_backup.bin and will be in WYZE_BACKUP_xxxxx/
 This backup is unique PER CAMERA, so if you don't save it somewhere yourself you won't be able to revert.
 
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+
+
 # Installation Steps
 
 1. Download the zip file for the wyze v2 from this repository

@@ -6,6 +6,9 @@ Installation video at https://youtu.be/4-NrAt4KjkE
 
 If you have trouble, jump on our Discord channel and we'll help you out!
 
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+
+
 # This process IS Reversible
 
 The first step of this installer will create a backup of your factory firmware, which can be used to revert back to WUUK if you need to.

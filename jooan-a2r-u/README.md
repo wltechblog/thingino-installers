@@ -3,6 +3,8 @@
 This CHEAP camera is available for around $4 on Temu! https://temu.to/k/u3vjm1ss1cm
 Follow along with my Youtube video to discover and flash this camera! https://youtu.be/wfeA8wOEe34
 
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+
 # THIS PROCESS IS NOT REVERSIBLE
 
 Using the ONE TOOL install method, it's a one-way street. You can always flash Thingino and other third party firmwares, but if you want the

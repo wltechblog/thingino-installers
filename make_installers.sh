@@ -27,11 +27,21 @@ sudo mount -o user,uid=${ID} ${PART} mnt
 
 get_asset () {
 TWD=$(pwd)
-B=$(basename $1)
+DAY=$(date +%Y-%m-%d -d yesterday)
+FILE=$(echo $1 | sed "s|releases/latest/download|releases/download/firmware-${DAY}|")
+# We need yesterday's build
+#--2025-04-12 17:24:52--  https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam3_t31x_gc2053_atbm6031.bin
+#Resolving github.com (github.com)... 140.82.113.4
+#Connecting to github.com (github.com)|140.82.113.4|:443... connected.
+#HTTP request sent, awaiting response... 302 Found
+#Location: https://github.com/themactep/thingino-firmware/releases/download/firmware-2025-04-12/thingino-wyze_cam3_t31x_gc2053_atbm6031.bin [following]
+#--2025-04-12 17:24:52--  https://github.com/themactep/thingino-firmware/releases/download/firmware-2025-04-12/thingino-wyze_cam3_t31x_gc2053_atbm6031.bin
+
+B=$(basename $FILE)
 if [ ! -e ${WD}/tmp/${B} ]
 then
 	cd ${WD}/tmp
-	wget $1
+	wget $FILE
 	if [ $? != 0 ] || [ ! -s ${B} ]
 	then
 		echo "Couldn't download $1"

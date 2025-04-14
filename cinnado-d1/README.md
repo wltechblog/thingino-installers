@@ -3,6 +3,8 @@
 This is a popular cmaera mostly because of its price. It is a typical PTZ 1080p camera with a T31L or T23 processor, and 8 megabyte flash.
 Installation video is here: https://youtu.be/phqR49t75Ak
 
+The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+
 If you have trouble, jump on our Discord channel and we'll help you out!
 
 # This process IS NOT reversible
