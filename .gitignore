@@ -1,2 +1,5 @@
+sd-base.img
+tmp/
+mnt/
+.DS_Store
 tmp
-
