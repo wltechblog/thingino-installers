@@ -43,7 +43,7 @@ sudo mount -o user,uid=${ID} ${PART} mnt
 add_uboot() {
 UBOOT=$1
 get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-03-10/${UBOOT}
-sudo dd if=tmp/${UBOOT} of=${LOOP} bs=512 seek=34 #add mmc recovery
+sudo dd if=${WD}/tmp/${UBOOT} of=${LOOP} bs=512 seek=34 #add mmc recovery
 rm ${UBOOT}
 }
 
@@ -90,8 +90,6 @@ cp ${WD}/tmp/uImage.lzma-t20 factory_ZMC6tiIDQN
 cp ${WD}/assets/demo.bin .
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam2_t20x_jxf22_rtl8189ftv.bin
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam2_t20x_jxf23_rtl8189ftv.bin
-mv thingino-wyze_cam2_t20x_jxf22_rtl8189ftv.bin thingino-wyze_c2_jxf22.bin
-mv thingino-wyze_cam2_t20x_jxf23_rtl8189ftv.bin thingino-wyze_c2_jxf23.bin
 cd ${WD}
 close_image
 zip -o wyze-cam-2/wyze-cam-2-sd.zip sd.img
@@ -101,14 +99,13 @@ rm sd.img
 do_wyze_v3() {
 echo " ################### Let's create a Wyze V3 install image"
 new_image
+cd ${WD}/tmp
+unzip -o ../assets/wz-neos-upgrader.zip 
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam3_t31al_gc2053_atbm6031.bin
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam3_t31x_gc2053_atbm6031.bin
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam3_t31x_gc2053_rtl8189ftv.bin
-mv thingino-wyze_cam3_t31al_gc2053_atbm6031.bin thingino-wyze_c3_t31al_atbm.bin
-mv thingino-wyze_cam3_t31x_gc2053_atbm6031.bin thingino-wyze_c3_t31x_atbm.bin
-mv thingino-wyze_cam3_t31x_gc2053_rtl8189ftv.bin thingino-wyze_c3_t31x_rtl.bin
 cd ${WD}
 close_image
 zip -o wyze-cam-3/wyze-cam-3-sd.zip sd.img
@@ -175,6 +172,7 @@ new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-cinnado_d1_t23n_sc2336_atbm6012bx.bin
 mv thingino-cinnado_d1_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+cp autoupdate-full.bin v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
