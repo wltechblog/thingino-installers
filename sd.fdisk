@@ -4,4 +4,4 @@ device: /dev/sda
 unit: sectors
 sector-size: 512
 
-/dev/sda1 : start=        2048, size=      245760, type=c
+/dev/sda1 : start=        2048, size=      243712, type=c

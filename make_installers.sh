@@ -22,7 +22,7 @@ rm sd-base.img
 new_image () {
 if [ ! -e sd-base.img ]
 then
-	dd if=/dev/zero of=sd-base.img bs=1M count=128
+	dd if=/dev/zero of=sd-base.img bs=1M count=120
 	sfdisk sd-base.img < sd.fdisk
 	LOOP=$(losetup -f)
 	sudo losetup -P ${LOOP} sd-base.img 
