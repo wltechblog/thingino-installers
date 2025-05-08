@@ -159,6 +159,8 @@ new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wansview_w7_t31l_sc2336_atbm6012b.bin
 mv thingino-wansview_w7_t31l_sc2336_atbm6012b.bin v4_all.bin
+add_uboot u-boot-isvp_t31_msc0_lite.bin
+
 cd ${WD}
 close_image
 zip -o wansview-w7/wansview-w7-t31-sd.zip sd.img
