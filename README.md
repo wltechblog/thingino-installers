@@ -5,6 +5,12 @@ Files and tools for building Thingino firmware on various supported camera model
 > [!NOTE]
 > Follow the README in the subdirectory named for your camera, THIS OVERRIDES WHAT I SHOW IN A VIDEO
 
+
+## THINGINO
+
+Thingino is an open source firmware replacement for Ingenic powered devices, mostly IP Cameras! Check out the Thingino project homepage
+at https://thingino.com and the project repo at https://github.com/themactep/thingino-firmware !
+
 ## A note about UPDATES
 
 The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
