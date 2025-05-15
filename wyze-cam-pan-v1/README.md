@@ -17,9 +17,10 @@ The images in the installers are updated once a week, you probably want to do a 
 
 1. Download the zip file for the wyze-cam-pan-v1 from this repository
 2. Use a sd image burning software such as Balena Etcher to write the image to your sd card (any card 128MB or larger)
-3. Power off your camera and insert the sd card, thn power it on
-4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
-5. After setting up the camera in webui, make sure to do a full update to current firmware as the included files are only updated periodically>
+3. Power off your camera and insert the sd card, thn power it on while holding down the SETUP button
+4. Keep holding SETUP until the light turns blue, then release!
+5. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
+6. After setting up the camera in webui, make sure to do a full update to current firmware as the included files are only updated periodically.
 
 # Notes
 
