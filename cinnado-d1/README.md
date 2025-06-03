@@ -1,5 +1,7 @@
 # Cinnado D1
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
+
 This is a popular cmaera mostly because of its price. It is a typical PTZ 1080p camera with a T31L or T23 processor, and 8 megabyte flash.
 Installation video is here: https://youtu.be/phqR49t75Ak
 

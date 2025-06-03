@@ -1,15 +1,19 @@
 # WANSVIEW W7
 
-# Buy it at Amazon: https://amzn.to/3yTUFob
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
-# Installation video here: https://youtu.be/jCRiIljSWlw
+# This is for the normal W7 model, not the SOLAR or 4G LTE versions which are unsupported!
+
+Buy it at Amazon: https://amzn.to/3yTUFob
+Installation video here: https://youtu.be/jCRiIljSWlw
 
 # NOTE
 
 These instructions are the *initial flash* from factory firmware to Thingino, and should not be confused with the instructions for unbricking!
+
 Also, Wansview has updated the W7 and newer models use the T23 processor instead of the T31. The only way to tell is to look inside. Follow this video: https://www.youtube.com/shorts/8dlMDv3GmZ0
 
-The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
+The images in the installers are updated around once a week, you probably want to do a full upgrade after installing!
 
 # SD card install instructions:
 

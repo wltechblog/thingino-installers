@@ -1,5 +1,7 @@
 # Wyze Cam V3 (WYZEC3)
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
+
 This is a popular and current camera from Wyze, which normally retails for around $30 but can be often found closer to $20.
 Camera can be found at https://amzn.to/3zK7DoS
 Installation video at https://youtu.be/dcpuRz04zVg

@@ -1,5 +1,7 @@
 # WUUK Y0310
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
+
 This is one of my favorite cams! If you've been thinking about a fixed position, indoor camera, it's hard to go wrong with this one. And I like it way better than the Wyze V3.
 
 Buy your own! WUUK 2K Wired Cam Pro: https://wltechblog.com/to/E50WT

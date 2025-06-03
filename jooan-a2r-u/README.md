@@ -1,5 +1,7 @@
 # JOOAN A2R-U
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
+
 This CHEAP camera is available for around $4 on Temu! https://temu.to/k/u3vjm1ss1cm
 Follow along with my Youtube video to discover and flash this camera! https://youtu.be/wfeA8wOEe34
 

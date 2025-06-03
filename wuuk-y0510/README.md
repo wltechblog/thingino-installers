@@ -1,5 +1,7 @@
 # WUUK Y0510
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
+
 This is my favorite cam so far! After playing with a bunch of lower end devices it's refreshing to have a premium one.
 Buy your own! https://amzn.to/4fJRcc5
 Installation video at https://youtu.be/4-NrAt4KjkE

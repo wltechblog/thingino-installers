@@ -1,5 +1,6 @@
 # JOOAN Q3R
 
+# This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
 More info on this cam coming soon! Follow the same process as the A2R-U! https://youtu.be/wfeA8wOEe34
 
