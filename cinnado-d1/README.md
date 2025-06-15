@@ -17,7 +17,7 @@ This backup is unique PER CAMERA, so if you don't save it somewhere yourself you
 # Installation Steps
 
 1. Crack open the camera and determine if you have the T31 or T23 processor. Download the zip file that matches.
-2. Use a sd image burning software such as Rufus or Balena Etcher to write the image to your sd card (any card 128MB or larger)
+2. Use a sd image burning software such as Rufus or Raspberry Pi Imager to write the image to your sd card (any card 128MB or larger)
 3. Power off your camera and insert the sd card, thn power it on
 4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
 

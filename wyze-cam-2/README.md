@@ -19,7 +19,7 @@ The images in the installers are updated once a week, you probably want to do a 
 # Installation Steps
 
 1. Download the zip file for the wyze v2 from this repository
-2. Use a sd image burning software such as Balena Etcher to write the image to your sd card (any card 128MB or larger)
+2. Use a sd image burning software such as Rufus or Raspberry Pi Imager to write the image to your sd card (any card 128MB or larger)
 3. Power off your camera and insert the sd card, hold down the SETUP button as you plug it in, release when the led on the back goes blue.
 4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
 5. After setting up the camera in webui, make sure to do a full update to current firmware as the included files are only updated periodically>
