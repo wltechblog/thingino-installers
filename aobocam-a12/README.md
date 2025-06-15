@@ -11,7 +11,7 @@ The images in the installers are updated once a week, you probably want to do a 
 
 ## This process is reversible
 
-The first step of this installer will create a backup of your factory firmware, which can be used to revert back to the original firmware if you need to.
+The first step of this installer will create a backup of your factory firmware, which can be used to revert back to the original firmware if you need to.  
 The factory firmware file is named "factory.bin" and will be in "backup/".
 
 ## Installation Steps
@@ -21,3 +21,8 @@ The factory firmware file is named "factory.bin" and will be in "backup/".
 3. Power off your camera and insert the sd card, thn power it on
 4. Wait around 3-4 minutes and you should see the camera's new wireless network for provisioning it.
 
+#### Important note
+> This camera has very low memory, which might cause it to crash after few minutes after booting thingino.  
+> To solve the issue, just reboot it, access its web UI and adjust these settings:
+> - Disable OSD for all the stream channels
+> - Lower the resolution of the main channel
