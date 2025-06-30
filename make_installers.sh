@@ -143,6 +143,32 @@ zip -o wuuk-y0310/wuuk-y0310-sd.zip sd.img
 rm sd.img
 }
 
+do_wansview_g6() {
+echo " ################### Let's create Wansview G6 2.4ghz install images"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wansview_g6_t31l_sc2336_atbm6012b.bin
+mv thingino-wansview_g6_t31l_sc2336_atbm6012b.bin v4_all.bin
+add_uboot u-boot-isvp_t31_msc0.bin
+cd ${WD}
+close_image
+zip -o wansview-g6/wansview-g6-2.4ghz-sd.zip sd.img
+rm sd.img
+
+
+echo " ####### Annnnnd the dual band...."
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wansview_g6_t31l_sc2336_ssv6256p.bin
+mv thingino-wansview_g6_t31l_sc2336_ssv6256p.bin v4_all.bin
+add_uboot u-boot-isvp_t31_msc0.bin
+cd ${WD}
+close_image
+zip -o wansview-g6/wansview-g6-dualband-sd.zip sd.img
+rm sd.img
+}
+
+
 do_wansview_w7() {
 echo " ################### Let's create Wansview W7/Galayou Y4 install images"
 new_image
@@ -211,7 +237,7 @@ echo " ################### Let's create a Wyze Cam Pan V2 instllaer"
 WD=$(pwd)
 new_image
 cd ${WD}/mnt
-cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQ
+cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_campan2_t31x_gc2053_atbm6031.bin
 mv thingino-wyze_campan2_t31x_gc2053_atbm6031.bin autoupdate-full.bin
 cd ${WD}
@@ -233,6 +259,21 @@ mv thingino-sonoff_s2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
 cd ${WD}
 close_image
 zip -o sonoff-slim-gen-2/sonoff-slim-gen-2-sd.zip sd.img
+rm sd.img
+}
+
+do_jooan_q3r() {
+echo " ################### Let's create Jooan Q3R Installers"
+echo " #### Altobeam"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin
+mv thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin  autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+#add mmc recovery
+close_image
+zip -o jooan-q3r/jooan-q3r-u-altobeam-6012bx.zip sd.img
 rm sd.img
 }
 
@@ -288,6 +329,21 @@ zip -o aoqee-c1/aoqee-c1.zip sd.img
 rm sd.img
 }
 
+#thingino-szt_ct213_t23n_gc1084_atbm6012b.bin
+# this is being developed still
+#do_szt_ct213() {
+#echo " #### szt-ct213"
+#new_image
+#cd ${WD}/mnt
+#get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-szt_ct213_t23n_gc1084_atbm6012b.bin
+#mv thingino-szt_ct213_t23n_gc1084_atbm6012b.bin  autoupdate-full.bin
+#cd ${WD}
+#add_uboot u-boot-isvp_t23n_msc0.bin
+#close_image
+#zip -o szt-ct213/szt-ct213.zip sd.img
+#rm sd.img
+#}
+
 
 do_galayou_y4() {
 echo " #### galayou y4"
@@ -299,6 +355,17 @@ cd ${WD}
 add_uboot u-boot-isvp_t31_msc0_lite.bin
 close_image
 zip -o galayou-y4/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
+rm sd.img
+}
+
+do_diagnostics() {
+echo " ### diag"
+new_image
+cd ${WD}/mnt
+cp ${WD}/assets/runonce.sh .
+cd ${WD}
+close_image
+zip -o diagnostics/diagnostics.zip sd.img
 rm sd.img
 }
 
