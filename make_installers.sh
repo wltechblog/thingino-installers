@@ -148,7 +148,7 @@ echo " ################### Let's create Wansview G6 2.4ghz install images"
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wansview_g6_t31l_sc2336_atbm6012b.bin
-mv thingino-wansview_g6_t31l_sc2336_atbm6012b.bin v4_all.bin
+mv thingino-wansview_g6_t31l_sc2336_atbm6012b.bin autoupdate-full.bin
 add_uboot u-boot-isvp_t31_msc0.bin
 cd ${WD}
 close_image
@@ -160,7 +160,7 @@ echo " ####### Annnnnd the dual band...."
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wansview_g6_t31l_sc2336_ssv6256p.bin
-mv thingino-wansview_g6_t31l_sc2336_ssv6256p.bin v4_all.bin
+mv thingino-wansview_g6_t31l_sc2336_ssv6256p.bin autoupdate-full.bin
 add_uboot u-boot-isvp_t31_msc0.bin
 cd ${WD}
 close_image
