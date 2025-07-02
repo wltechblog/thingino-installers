@@ -257,6 +257,7 @@ touch sfproducttest
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-sonoff_s2_t23n_sc2336_atbm6012bx.bin
 mv thingino-sonoff_s2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
 cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
 zip -o sonoff-slim-gen-2/sonoff-slim-gen-2-sd.zip sd.img
 rm sd.img
