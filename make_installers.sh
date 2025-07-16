@@ -27,7 +27,7 @@ then
 	LOOP=$(losetup -f)
 	sudo losetup -P ${LOOP} sd-base.img 
 	PART="${LOOP}p1"
-	sudo mkfs.vfat ${PART}
+	sudo mkfs.vfat -F 32 ${PART}
 	sudo losetup -d ${LOOP}
 fi
 LOOP=$(losetup -f)
@@ -142,6 +142,21 @@ close_image
 zip -o wuuk-y0310/wuuk-y0310-sd.zip sd.img
 rm sd.img
 }
+
+do_aosu_c5l() {
+echo " ############### Let's create a AOSU image #####"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin
+mv thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o aosu-c5l/aosu-c5l.zip sd.img
+rm sd.img
+}
+
+
 
 do_wansview_g6() {
 echo " ################### Let's create Wansview G6 2.4ghz install images"
@@ -303,6 +318,34 @@ close_image
 zip -o jooan-a2r-u/jooan-a2r-u-ssv6355.zip sd.img
 rm sd.img
 }
+
+do_jooan_a6m_u() {
+echo " ################### Let's create Jooan a6m-U Installers"
+echo " #### Altobeam"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_a6m_t23n_sc1a4t_atbm6012bx.bin
+mv thingino-jooan_a6m_t23n_sc1a4t_atbm6012bx.bin autoupdate-full.bin
+
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+#add mmc recovery
+close_image
+zip -o jooan-a6m-u/jooan-a6m-u-altobeam-6012bx.zip sd.img
+rm sd.img
+
+echo " #### SSV"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_a6m_t23n_sc1a4t_ssv6355.bin
+mv thingino-jooan_a6m_t23n_sc1a4t_ssv6355.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o jooan-a6m-u/jooan-a6m-u-ssv6355.zip sd.img
+rm sd.img
+}
+
 
 do_galayou_g7() {
 echo " #### Galayou G7"
