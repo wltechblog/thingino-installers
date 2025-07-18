@@ -152,7 +152,7 @@ mv thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin autoupdate-full.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0.bin
 close_image
-zip -o aosu-c5l/aosu-c5l.zip sd.img
+zip -o aosu-c5l/aosu-c5l-t31.zip sd.img
 rm sd.img
 }
 
