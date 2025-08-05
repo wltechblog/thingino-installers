@@ -2,7 +2,7 @@
 
 # This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
-Follow along with my Youtube video to discover and flash this camera! COMING SOON
+Follow along with my Youtube video to discover and flash this camera! https://youtu.be/_9ZYJ1Lw7DU
 
 The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
 
