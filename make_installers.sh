@@ -122,6 +122,7 @@ cp ${WD}/assets/aobocam-a12-factory.sh t23_prod_eth_test
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aobocam_a12_t23dl_jxh63p_txw901u.bin
 mv thingino-aobocam_a12_t23dl_jxh63p_txw901u.bin autoupdate-full.bin
 cd ${WD}
+add_uboot u-boot-isvp_t23dl_msc0.bin
 close_image
 zip -o aobocam-a12/aobocam-a12-sd.zip sd.img
 rm sd.img
