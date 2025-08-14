@@ -15,9 +15,13 @@ Installation video here: https://youtu.be/jCRiIljSWlw
 
 NOTE: These instructions are the *initial flash* from factory firmware to Thingino, and should not be confused with the instructions for [unbricking][1]!
 
+### Identifying the processor
+
 Wansview has updated the W7 and newer models use the T23 processor instead of the T31. The only way to tell is to look inside. Follow [this video][2] to see how to open up the camera to see the chip.
 
 ![](T23.png)
+
+### Steps
 
 1. Verify which processor your cam has (T31 or T23).
 1. Download the appropriate zip file from above.
