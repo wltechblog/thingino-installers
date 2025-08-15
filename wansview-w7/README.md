@@ -24,12 +24,11 @@ Wansview has updated the W7 and newer models use the T23 processor instead of th
 ### Steps
 
 1. Verify which processor your cam has (T31 or T23).
-1. Download the appropriate zip file from above.
-1. Extract the zip file, which will create a file named `sd.img`.
-1. Use your favorite SD card writer (I suggest Raspberry Pi Imager) to write `sd.img` to your physical SD card.
-1. Insert the SD card into the camera and plug it in to start it up.
-1. Wait about 3 minutes and you should see an open WiFi network name that starts with `Thingino`.
-1. Proceed with [configuring wireless access][3].
+2. Download the appropriate zip file from above.
+3. Use your favorite SD card writer (for example Raspberry Pi Imager) to write the image file to your physical SD card (you should not need to extract the zip file).
+4. Insert the SD card into the camera and plug it in to start it up.
+5. Wait about 3 minutes and you should see an open WiFi network name that starts with `Thingino`.
+6. Proceed with [configuring wireless access][3].
 
 Check out the [wiki page](https://github.com/themactep/thingino-firmware/wiki/Camera:-Wansview-W7-Galayou-Y4) for more info.
 
