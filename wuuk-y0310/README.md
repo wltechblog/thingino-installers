@@ -12,6 +12,7 @@ If you have trouble, jump on our Discord channel and we'll help you out!
 
 The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
 
+This image also contais the necessary setup for unbricking which will be covered in a future video!
 
 # This process IS Reversible
 
