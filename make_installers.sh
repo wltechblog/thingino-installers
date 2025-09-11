@@ -256,7 +256,7 @@ cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t20 factory_ZMC6tiIDQN
 cp ${WD}/assets/demo.bin .
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin
-mv thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin autoupdate-full.bin
+mv thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin autoupdate-full.yay
 cd ${WD}
 close_image
 zip -o wyze-cam-pan-v1/wyze-cam-pan-v1-sd.zip sd.img
