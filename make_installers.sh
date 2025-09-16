@@ -42,7 +42,7 @@ sudo mount -o user,uid=${ID} ${PART} mnt
 
 add_uboot() {
 UBOOT=$1
-get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-03-10/${UBOOT}
+get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-09-11/${UBOOT}
 sudo dd if=${WD}/tmp/${UBOOT} of=${LOOP} bs=512 seek=34 #add mmc recovery
 rm ${UBOOT}
 }
@@ -165,6 +165,7 @@ new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin
 mv thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin autoupdate-full.bin
+cp autoupdate-full.bin FIRMWARE_C5L_F.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0.bin
 close_image
