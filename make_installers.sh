@@ -271,7 +271,7 @@ new_image
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_campan2_t31x_gc2053_atbm6031.bin
-mv thingino-wyze_campan2_t31x_gc2053_atbm6031.bin autoupdate-full.bin
+mv thingino-wyze_campan2_t31x_gc2053_atbm6031.bin autoupdate-full.yay
 cd ${WD}
 close_image
 zip -o wyze-cam-pan-v2/wyze-cam-pan-v2-sd.zip sd.img
@@ -389,6 +389,33 @@ close_image
 zip -o aoqee-c1/aoqee-c1.zip sd.img
 rm sd.img
 }
+
+do_tapo_c100() {
+echo " #### tapo-c100 T23"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-tplink_tapo_c100_t23n_sc2336p_wq9001.bin
+mv thingino-tplink_tapo_c100_t23n_sc2336p_wq9001.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o tapo-c100/tapo-c100-t23.zip sd.img
+rm sd.img
+
+echo " #### tapo c-100 T31"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-tplink_tapo_c100_t31l_sc2336_rtl8188ftv.bin
+mv thingino-tplink_tapo_c100_t31l_sc2336_rtl8188ftv.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_lite.bin
+close_image
+zip -o tapo-c100/tapo-c100-t31.zip sd.img
+rm sd.img
+
+
+}
+
 
 #thingino-szt_ct213_t23n_gc1084_atbm6012b.bin
 # this is being developed still
