@@ -1,5 +1,10 @@
 # Aobocam A12
 
+# THIS IS NOT A GOOD CAMERA. DO NOT BUY THIS CAMERA INTENDING TO RUN THINGINO.
+This image and method is provided for people who already own this camera and want to experiment, but it is extremely limited
+and will not be a good out of the box experience with Thingino. If you bought an A12 with the intention or installing
+Thingino, my best recommendation is that you return it to wherever you bought it from.
+
 ## This image will upgrade your camera from factory firmware to Thingino. It won't work for upgrading afterwards.
 
 Camera model: https://amzn.com/dp/B0DHL7MKBN
