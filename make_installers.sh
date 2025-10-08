@@ -383,10 +383,24 @@ new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062.bin
 mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  autoupdate-full.bin
+cp autoupdate-full.bin v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
 zip -o aoqee-c1/aoqee-c1.zip sd.img
+rm sd.img
+}
+
+do_galayou_g2() {
+echo " #### Galayou G2"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_g2_t23n_sc2336_atbm6012bx.bin
+mv thingino-galayou_g2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o galayou-g2/galayou-g2-2k.zip sd.img
 rm sd.img
 }
 
