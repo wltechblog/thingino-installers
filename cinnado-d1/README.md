@@ -2,6 +2,12 @@
 
 # This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
+# NOTE
+
+There is a new variant of this cmaera not mentioned in the existing video! If you have a T31 processor, check the wifi chip.
+It should say Altobeam 6031, check the bottom line and if it ends with an X you need the 6031x zip file!
+
+
 This is a popular camera mostly because of its price. It is a typical PTZ 1080p camera with a T31L or T23 processor, and 8 megabyte flash.
 Installation video is here: https://youtu.be/phqR49t75Ak
 
