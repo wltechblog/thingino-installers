@@ -236,7 +236,7 @@ cp autoupdate-full.bin v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o cinnado-d1/cinnado-d1-t23.zip sd.img
+zip -o cinnado-d1/cinnado-d1-t23n-atbm6012bx.zip sd.img
 rm sd.img
 
 new_image
@@ -245,7 +245,16 @@ get_asset https://github.com/themactep/thingino-firmware/releases/latest/downloa
 mv thingino-cinnado_d1_t31l_sc2336_atbm6031.bin v4_all.bin
 cd ${WD}
 close_image
-zip -o cinnado-d1/cinnado-d1-t31.zip sd.img
+zip -o cinnado-d1/cinnado-d1-t31l-atbm6031.zip sd.img
+rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-cinnado_d1_t31l_sc2336_atbm6031x.bin
+mv thingino-cinnado_d1_t31l_sc2336_atbm6031x.bin v4_all.bin
+cd ${WD}
+close_image
+zip -o cinnado-d1/cinnado-d1-t31l-atbm6031x.zip sd.img
 rm sd.img
 }
 
@@ -300,8 +309,8 @@ echo " ################### Let's create Jooan Q3R Installers"
 echo " #### Altobeam"
 new_image
 cd ${WD}/mnt
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin
-mv thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin  autoupdate-full.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_q3r_t23n_sc1a4t_eth+atbm6012bx.bin
+mv thingino-jooan_q3r_t23n_sc1a4t_eth+atbm6012bx.bin  autoupdate-full.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 #add mmc recovery
