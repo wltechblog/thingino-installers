@@ -26,3 +26,13 @@ The images in the installers are updated around once a week, you probably want t
 2. Use Raspberry pi Imager (or Rufus!) to burn that image to your SD card
 3. Insert the SD card
 4. Power up the cam and wait a few minutes, you should see the new wifi network you can connect to and configure the camera
+
+## Troubleshooting
+
+### After I plug it in, a blue led is ON for a while and the motors rotate but i have no WiFi network to connect
+This means that your cam is booting but fails to setup the WiFi hotspot. Your cam is NOT bricked :)
+You may have installed the firmware with the wrong WiFi chipset (or maybe there's a new chipset that we don't cover yet).
+
+### After I plug it in, the motors never rotate
+Your cam is bricked, but don't worry! You can follow this tutorial to unbrick it: https://www.youtube.com/watch?v=xQa9lV9r4_g
+
