@@ -53,7 +53,7 @@ TWD=$(pwd)
 # If you need a previous release, add "-d yesterday" or similar to the next line
 DAY=$(date +%Y-%m-%d)
 FILE=$(echo $1 | sed "s|releases/latest/download|releases/download/firmware-${DAY}|")
-
+FILE=$1
 B=$(basename $FILE)
 if [ ! -e ${WD}/tmp/${B} ]
 then
@@ -210,8 +210,19 @@ mv thingino-galayou_y4_t23n_sc2336_atbm6062.bin v4_all.bin
 add_uboot u-boot-isvp_t23n_msc0.bin
 cd ${WD}
 close_image
-zip -o wansview-w7/wansview-w7-t23-sd.zip sd.img
+zip -o wansview-w7/wansview-w7-t23-atbm6062-sd.zip sd.img
 rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_y4_t23n_sc2336_atbm6062cu.bin
+mv thingino-galayou_y4_t23n_sc2336_atbm6062cu.bin v4_all.bin
+add_uboot u-boot-isvp_t23n_msc0.bin
+cd ${WD}
+close_image
+zip -o wansview-w7/wansview-w7-t23-atbm6062cu-sd.zip sd.img
+rm sd.img
+
 
 new_image
 cd ${WD}/mnt
@@ -221,7 +232,7 @@ add_uboot u-boot-isvp_t31_msc0_lite.bin
 
 cd ${WD}
 close_image
-zip -o wansview-w7/wansview-w7-t31-sd.zip sd.img
+zip -o wansview-w7/wansview-w7-t31-atbm6012bsd.zip sd.img
 rm sd.img
 }
 
@@ -465,7 +476,7 @@ mv thingino-galayou_y4_t31l_sc2336_atbm6032.bin  autoupdate-full.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0_lite.bin
 close_image
-zip -o galayou-y4/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
+zip -o wansview-w7/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
 rm sd.img
 }
 
