@@ -402,12 +402,21 @@ echo " #### aoqee-c1"
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062.bin
-mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  autoupdate-full.bin
-cp autoupdate-full.bin v4_all.bin
+mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o aoqee-c1/aoqee-c1.zip sd.img
+zip -o aoqee-c1/aoqee-c1-atbm6062.zip sd.img
+rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin
+mv thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin  v4_all.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o aoqee-c1/aoqee-c1-atbm6062cu.zip sd.img
 rm sd.img
 }
 
