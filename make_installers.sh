@@ -383,6 +383,20 @@ zip -o jooan-a6m-u/jooan-a6m-u-ssv6355.zip sd.img
 rm sd.img
 }
 
+do_jooan_w3_u() {
+echo " ################### Let's create Jooan W3-U Installers"
+echo " #### Altobeam"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_w3u_t23n_sc2336p_eth+atbm6132u.bin
+mv thingino-jooan_w3u_t23n_sc2336p_eth+atbm6132u.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+#add mmc recovery
+close_image
+zip -o jooan-w3-u/jooan-w3-u-altobeam-6132u.zip sd.img
+rm sd.img
+}
 
 do_galayou_g7() {
 echo " #### Galayou G7"
