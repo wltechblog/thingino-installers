@@ -495,7 +495,7 @@ echo " #### galayou y4"
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_y4_t31l_sc2336_atbm6032.bin
-mv thingino-galayou_y4_t31l_sc2336_atbm6032.bin  autoupdate-full.bin
+mv thingino-galayou_y4_t31l_sc2336_atbm6032.bin  ub_ajyall8_t31.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0_lite.bin
 close_image
