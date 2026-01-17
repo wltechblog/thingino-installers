@@ -298,21 +298,32 @@ zip -o wyze-cam-pan-v2/wyze-cam-pan-v2-sd.zip sd.img
 rm sd.img
 }
 
-do_sonoff_slim_gen2() {
-echo " ################### Let's create a Sonoff Slim Gen2 installer"
+
+_make_sonoff_image() {
+local -r camera_name=${1?}
+local -r thingino_release=${2?}
+echo " ###################============ Creating an image for ${camera_name?} using ${thingino_release?}"
 WD=$(pwd)
 new_image
 cd ${WD}/mnt
-cp ${WD}/assets/sonoff-slim-gen2-install.sh start_sfproducttest.sh
+cp ${WD}/assets/sonoff-install.sh start_sfproducttest.sh
 touch sfproducttest
 
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-sonoff_s2_t23n_sc2336_atbm6012bx.bin
-mv thingino-sonoff_s2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/${thingino_release?}.bin
+mv ${thingino_release?}.bin autoupdate-full.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o sonoff-slim-gen-2/sonoff-slim-gen-2-sd.zip sd.img
+mkdir -p ${camera_name?}
+zip -o ${camera_name?}/${camera_name?}-sd.zip sd.img
 rm sd.img
+}
+
+do_sonoff() {
+echo " ################### Let's create Sonoff installers"
+_make_sonoff_image sonoff-slim-gen-2 thingino-sonoff_s2_t23n_sc2336_atbm6012bx
+_make_sonoff_image sonoff-pt2 thingino-sonoff_pt2_t23n_sc2336p_atbm6012bx 
+_make_sonoff_image sonoff-b1p thingino-sonoff_b1p_t23n_sc2336_atbm6012bx
 }
 
 do_jooan_q3r() {

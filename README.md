@@ -51,6 +51,8 @@ This repository includes installers for the following camera models:
 | JOOAN | A2R-U | `jooan-a2r-u/` |
 | JOOAN | A6M-U | `jooan-a6m-u/` |
 | JOOAN | Q3R | `jooan-q3r/` |
+| Sonoff | B1P (CAM Outdoor) | `sonoff-b1p/` |
+| Sonoff | PT2 (CAM Pan-Tilt 2) | `sonoff-pt2/` |
 | Sonoff | Slim Gen 2 | `sonoff-slim-gen-2/` |
 | SZT | CT213 | `szt-ct213/` |
 | Wansview | G6 | `wansview-g6/` |
