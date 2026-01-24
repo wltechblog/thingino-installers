@@ -201,6 +201,19 @@ rm sd.img
 }
 
 
+do_gncc_gc2() {
+echo " ################### GNCC GC2 T23"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-gncc_gc2_t23n_sc2336_atbm6012bx.bin
+mv thingino-gncc_gc2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+add_uboot u-boot-isvp_t23n_msc0.bin
+cd ${WD}
+close_image
+zip -o gncc-gc2/gncc-gc2-t23n-sc2336-atbm6012bx.zip sd.img
+rm sd.img
+}
+
 do_wansview_w7() {
 echo " ################### Let's create Wansview W7/Galayou Y4 install images"
 new_image
@@ -312,6 +325,23 @@ cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
 zip -o sonoff-slim-gen-2/sonoff-slim-gen-2-sd.zip sd.img
+rm sd.img
+}
+
+do_sonoff_outdoor_b1p() {
+echo " ################### Let's create a Sonoff Outdoor B1P installer"
+WD=$(pwd)
+new_image
+cd ${WD}/mnt
+cp ${WD}/assets/sonoff-slim-gen2-install.sh start_sfproducttest.sh
+touch sfproducttest
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-sonoff_b1p_t23n_sc2336_atbm6012bx.bin
+mv thingino-sonoff_b1p_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o sonoff-outdoor-b1p/sonoff-outdoor-b1p-sd.zip sd.img
 rm sd.img
 }
 
@@ -473,6 +503,18 @@ rm sd.img
 
 }
 
+do_vanhua_h53e() {
+echo " #### Vanhua h53e"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-vanhua_h53e_t31x_gc4023_eth_rtl8188ftv.bin
+mv thingino-vanhua_h53e_t31x_gc4023_eth_rtl8188ftv.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_lite.bin
+close_image
+zip -o vanhua-h53e/vanhua-h53e.zip sd.img
+rm sd.img
+}
 
 #thingino-szt_ct213_t23n_gc1084_atbm6012b.bin
 # this is being developed still
