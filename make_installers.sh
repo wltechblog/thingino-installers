@@ -42,7 +42,7 @@ sudo mount -o user,uid=${ID} ${PART} mnt
 
 add_uboot() {
 UBOOT=$1
-get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-03-10/${UBOOT}
+get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-09-11/${UBOOT}
 sudo dd if=${WD}/tmp/${UBOOT} of=${LOOP} bs=512 seek=34 #add mmc recovery
 rm ${UBOOT}
 }
@@ -53,7 +53,7 @@ TWD=$(pwd)
 # If you need a previous release, add "-d yesterday" or similar to the next line
 DAY=$(date +%Y-%m-%d)
 FILE=$(echo $1 | sed "s|releases/latest/download|releases/download/firmware-${DAY}|")
-
+FILE=$1
 B=$(basename $FILE)
 if [ ! -e ${WD}/tmp/${B} ]
 then
@@ -165,6 +165,7 @@ new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin
 mv thingino-aosu_c5l_t31l_sc3336_rtl8188ftv.bin autoupdate-full.bin
+cp autoupdate-full.bin FIRMWARE_C5L_F.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0.bin
 close_image
@@ -200,6 +201,19 @@ rm sd.img
 }
 
 
+do_gncc_gc2() {
+echo " ################### GNCC GC2 T23"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-gncc_gc2_t23n_sc2336_atbm6012bx.bin
+mv thingino-gncc_gc2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+add_uboot u-boot-isvp_t23n_msc0.bin
+cd ${WD}
+close_image
+zip -o gncc-gc2/gncc-gc2-t23n-sc2336-atbm6012bx.zip sd.img
+rm sd.img
+}
+
 do_wansview_w7() {
 echo " ################### Let's create Wansview W7/Galayou Y4 install images"
 new_image
@@ -209,8 +223,19 @@ mv thingino-galayou_y4_t23n_sc2336_atbm6062.bin v4_all.bin
 add_uboot u-boot-isvp_t23n_msc0.bin
 cd ${WD}
 close_image
-zip -o wansview-w7/wansview-w7-t23-sd.zip sd.img
+zip -o wansview-w7/wansview-w7-t23-atbm6062-sd.zip sd.img
 rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_y4_t23n_sc2336_atbm6062cu.bin
+mv thingino-galayou_y4_t23n_sc2336_atbm6062cu.bin v4_all.bin
+add_uboot u-boot-isvp_t23n_msc0.bin
+cd ${WD}
+close_image
+zip -o wansview-w7/wansview-w7-t23-atbm6062cu-sd.zip sd.img
+rm sd.img
+
 
 new_image
 cd ${WD}/mnt
@@ -220,7 +245,7 @@ add_uboot u-boot-isvp_t31_msc0_lite.bin
 
 cd ${WD}
 close_image
-zip -o wansview-w7/wansview-w7-t31-sd.zip sd.img
+zip -o wansview-w7/wansview-w7-t31-atbm6012bsd.zip sd.img
 rm sd.img
 }
 
@@ -235,7 +260,7 @@ cp autoupdate-full.bin v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o cinnado-d1/cinnado-d1-t23.zip sd.img
+zip -o cinnado-d1/cinnado-d1-t23n-atbm6012bx.zip sd.img
 rm sd.img
 
 new_image
@@ -244,7 +269,16 @@ get_asset https://github.com/themactep/thingino-firmware/releases/latest/downloa
 mv thingino-cinnado_d1_t31l_sc2336_atbm6031.bin v4_all.bin
 cd ${WD}
 close_image
-zip -o cinnado-d1/cinnado-d1-t31.zip sd.img
+zip -o cinnado-d1/cinnado-d1-t31l-atbm6031.zip sd.img
+rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-cinnado_d1_t31l_sc2336_atbm6031x.bin
+mv thingino-cinnado_d1_t31l_sc2336_atbm6031x.bin v4_all.bin
+cd ${WD}
+close_image
+zip -o cinnado-d1/cinnado-d1-t31l-atbm6031x.zip sd.img
 rm sd.img
 }
 
@@ -256,7 +290,7 @@ cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t20 factory_ZMC6tiIDQN
 cp ${WD}/assets/demo.bin .
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin
-mv thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin autoupdate-full.bin
+mv thingino-wyze_campan1_t20x_jxf22_rtl8189etv.bin autoupdate-full.yay
 cd ${WD}
 close_image
 zip -o wyze-cam-pan-v1/wyze-cam-pan-v1-sd.zip sd.img
@@ -270,7 +304,7 @@ new_image
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_campan2_t31x_gc2053_atbm6031.bin
-mv thingino-wyze_campan2_t31x_gc2053_atbm6031.bin autoupdate-full.bin
+mv thingino-wyze_campan2_t31x_gc2053_atbm6031.bin autoupdate-full.yay
 cd ${WD}
 close_image
 zip -o wyze-cam-pan-v2/wyze-cam-pan-v2-sd.zip sd.img
@@ -294,13 +328,30 @@ zip -o sonoff-slim-gen-2/sonoff-slim-gen-2-sd.zip sd.img
 rm sd.img
 }
 
+do_sonoff_outdoor_b1p() {
+echo " ################### Let's create a Sonoff Outdoor B1P installer"
+WD=$(pwd)
+new_image
+cd ${WD}/mnt
+cp ${WD}/assets/sonoff-slim-gen2-install.sh start_sfproducttest.sh
+touch sfproducttest
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-sonoff_b1p_t23n_sc2336_atbm6012bx.bin
+mv thingino-sonoff_b1p_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o sonoff-outdoor-b1p/sonoff-outdoor-b1p-sd.zip sd.img
+rm sd.img
+}
+
 do_jooan_q3r() {
 echo " ################### Let's create Jooan Q3R Installers"
 echo " #### Altobeam"
 new_image
 cd ${WD}/mnt
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin
-mv thingino-jooan_q3r_t23n_sc1a4t_atbm6012bx.bin  autoupdate-full.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_q3r_t23n_sc1a4t_eth+atbm6012bx.bin
+mv thingino-jooan_q3r_t23n_sc1a4t_eth+atbm6012bx.bin  autoupdate-full.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 #add mmc recovery
@@ -362,6 +413,20 @@ zip -o jooan-a6m-u/jooan-a6m-u-ssv6355.zip sd.img
 rm sd.img
 }
 
+do_jooan_w3_u() {
+echo " ################### Let's create Jooan W3-U Installers"
+echo " #### Altobeam"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-jooan_w3u_t23n_sc2336p_eth+atbm6132u.bin
+mv thingino-jooan_w3u_t23n_sc2336p_eth+atbm6132u.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+#add mmc recovery
+close_image
+zip -o jooan-w3-u/jooan-w3-u-altobeam-6132u.zip sd.img
+rm sd.img
+}
 
 do_galayou_g7() {
 echo " #### Galayou G7"
@@ -381,11 +446,73 @@ echo " #### aoqee-c1"
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062.bin
-mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  autoupdate-full.bin
+mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o aoqee-c1/aoqee-c1.zip sd.img
+zip -o aoqee-c1/aoqee-c1-atbm6062.zip sd.img
+rm sd.img
+
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin
+mv thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin  v4_all.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o aoqee-c1/aoqee-c1-atbm6062cu.zip sd.img
+rm sd.img
+}
+
+do_galayou_g2() {
+echo " #### Galayou G2"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_g2_t23n_sc2336_atbm6012bx.bin
+mv thingino-galayou_g2_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o galayou-g2/galayou-g2-2k.zip sd.img
+rm sd.img
+}
+
+do_tapo_c100() {
+echo " #### tapo-c100 T23"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-tplink_tapo_c100_t23n_sc2336p_wq9001.bin
+mv thingino-tplink_tapo_c100_t23n_sc2336p_wq9001.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t23n_msc0.bin
+close_image
+zip -o tapo-c100/tapo-c100-t23.zip sd.img
+rm sd.img
+
+echo " #### tapo c-100 T31"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-tplink_tapo_c100_t31l_sc2336_rtl8188ftv.bin
+mv thingino-tplink_tapo_c100_t31l_sc2336_rtl8188ftv.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_lite.bin
+close_image
+zip -o tapo-c100/tapo-c100-t31.zip sd.img
+rm sd.img
+
+
+}
+
+do_vanhua_h53e() {
+echo " #### Vanhua h53e"
+new_image
+cd ${WD}/mnt
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-vanhua_h53e_t31x_gc4023_eth_rtl8188ftv.bin
+mv thingino-vanhua_h53e_t31x_gc4023_eth_rtl8188ftv.bin autoupdate-full.bin
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_lite.bin
+close_image
+zip -o vanhua-h53e/vanhua-h53e.zip sd.img
 rm sd.img
 }
 
@@ -410,11 +537,11 @@ echo " #### galayou y4"
 new_image
 cd ${WD}/mnt
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-galayou_y4_t31l_sc2336_atbm6032.bin
-mv thingino-galayou_y4_t31l_sc2336_atbm6032.bin  autoupdate-full.bin
+mv thingino-galayou_y4_t31l_sc2336_atbm6032.bin  ub_ajyall8_t31.bin
 cd ${WD}
 add_uboot u-boot-isvp_t31_msc0_lite.bin
 close_image
-zip -o galayou-y4/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
+zip -o wansview-w7/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
 rm sd.img
 }
 
