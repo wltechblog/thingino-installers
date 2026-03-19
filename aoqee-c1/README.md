@@ -12,6 +12,8 @@ actually safe and easy to try one image and switch to the other if it doesn't co
 
 If you bought your cam after September 2025, I suggest you try the 6062CU image first.
 
+if you chose the wrong one and need to switch, the easiest method to do so is to burn the other image and rename the file v4_all.bin to autoupdate-full.bin, then boot the cam with the card inserted!
+
 # Using this installer
 Follow along in this video!
 https://www.youtube.com/watch?v=XdIcLOpiWUk
