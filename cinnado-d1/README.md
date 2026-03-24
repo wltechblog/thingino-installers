@@ -9,9 +9,9 @@ one you have.
 
 The T31 version has two wifi options, which you can visually identify as well. It should say Altobeam 6031, check the bottom line and if it ends with an X you need the 6031x zip file!
 
-Recently, Cinnado D1s have been appearing with a different image sensor as well. You can't visually identify which you have.
-If you use this installer and find the cam is online and seems functional but you don't have an image,
-go to https://thingino.com grab the image for the Cinnado D1 with T23 and sc2331 sensor, and use the webui'd upload/flash function to switch!
+Recently, Cinnado D1s have switched to a different image sensor as well. You can't visually identify which you have. As or March 24 2026, the installer
+is now using the new sensor. If you use this installer and find the cam is online and seems functional but you don't have an image,
+go to https://thingino.com grab the image for the Cinnado D1 with T23 and sc2336 sensor, and use the webui'd upload/flash function to switch!
 
 
 This is a popular camera mostly because of its price. It is a typical PTZ 1080p camera with a T31L or T23 processor, and 8 megabyte flash.

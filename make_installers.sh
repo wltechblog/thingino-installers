@@ -254,8 +254,8 @@ do_cinnado_d1() {
 echo " ################### Let's create Cinnado D1 images"
 new_image
 cd ${WD}/mnt
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-cinnado_d1_t23n_sc2336_atbm6012bx.bin
-mv thingino-cinnado_d1_t23n_sc2336_atbm6012bx.bin autoupdate-full.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-cinnado_d1_t23n_sc2331_atbm6012bx.bin
+mv thingino-cinnado_d1_t23n_sc2331_atbm6012bx.bin autoupdate-full.bin
 cp autoupdate-full.bin v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
