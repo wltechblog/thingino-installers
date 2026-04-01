@@ -2,7 +2,7 @@
 
 # This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
-Follow along with my Youtube video to discover and flash this camera! https://youtu.be/_9ZYJ1Lw7DU
+Follow along with my Youtube video to discover and flash this camera! https://www.youtube.com/watch?v=82s4WcsuUYc
 
 The images in the installers are updated once a week, you probably want to do a full upgrade after installing!
 
@@ -17,7 +17,7 @@ in the future. Each camera has a unique firmware, so if you're doing multiple ca
 2. Use a 'dumb' USB-C cable for power only to boot the camera. Avoid using one with handshakes as they can cause confusion during the flashing process.
 3. After a few minutes, the camera will begin updating its firmware. Once complete, a new WiFi network should appear called 'THING-xxx'; connect to this to access the web interface for configuration.  Refer to the [Wi-Fi Configuration Guide](https://github.com/themactep/thingino-firmware/wiki/Configuration:-Wi%E2%80%90Fi-Access#captive-portal) for further directions.
 4. On checking the SD card files, there should be a new file now called 'autoupdate-full.done', which indicates the firmware process has completed.
-5. This process is reversible.  To revert back to the factory firmware, you will find a folder named 'backup' on the SD card.  Save this folder separately for each camera you work with, as each camera has its unique firmware version.
+5. This process is reversible.  To revert back to the factory firmware, you will find a folder named 'backup' on the SD card.  Save this folder separately for each camera you work with, as each camera has its unique firmware version. Putting the bin file on a blank SD card with the filename `autoupdate-full.bin` and booting the camera will restore it back to factory firmware.
 
 # Unbricking
 Unfortunately Sonoff has disabled the easier methods of unbricking, if something goes wrong and you need to recover a dead device, you'll neeed
