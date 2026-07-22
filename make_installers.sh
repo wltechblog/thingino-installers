@@ -548,6 +548,58 @@ zip -o wansview-w7/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
 rm sd.img
 }
 
+do_h3c_c2041() {
+echo " ################### Let's create a h3c c2041 install image"
+new_image
+
+#add old uboot that fits to 256k mtd0
+cp ${WD}/assets/uboots/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.uboot.sha256sum  ${WD}/mnt
+cp ${WD}/assets/uboots/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.uboot  ${WD}/mnt
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin
+cp ${WD}/assets/h3c.sh  ${WD}/mnt
+mkdir -p ${WD}/mnt/update/fireware/h3c_product_type/
+echo "busybox telnetd -l /bin/sh &" >> ${WD}/mnt/update/fireware/update.sh
+echo "sh /mnt/sd_card/h3c.sh >> /mnt/sd_card/h3clog &" >> ${WD}/mnt/update/fireware/update.sh
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/h3c.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o h3c-c2041/h3c-c2041-sd.zip sd.img
+rm sd.img
+}
+
+do_h3c_tc2100() {
+echo " ################### Let's create a h3c tc2100 install image"
+new_image
+
+#add old uboot that fits to 256k mtd0
+cp ${WD}/assets/uboots/thingino-h3c_tc2100_t31n_jxq03_eth+ssv6155.bin.uboot.sha256sum  ${WD}/mnt
+cp ${WD}/assets/uboots/thingino-h3c_tc2100_t31n_jxq03_eth+ssv6155.bin.uboot  ${WD}/mnt
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_tc2100_t31n_jxq03_eth+rtl8188ftv.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_tc2100_t31n_jxq03_eth+rtl8188ftv.bin
+cp ${WD}/assets/h3c.sh  ${WD}/mnt
+mkdir -p ${WD}/mnt/update/fireware/h3c_product_type/
+echo "busybox telnetd -l /bin/sh &" >> ${WD}/mnt/update/fireware/update.sh
+echo "sh /mnt/sd_card/h3c.sh >> /mnt/sd_card/h3clog &" >> ${WD}/mnt/update/fireware/update.sh
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/h3c.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o h3c-tc2100/h3c-tc2100-sd.zip sd.img
+rm sd.img
+}
+
 do_diagnostics() {
 echo " ### diag"
 new_image
