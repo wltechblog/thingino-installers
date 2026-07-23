@@ -600,6 +600,45 @@ zip -o h3c-tc2100/h3c-tc2100-sd.zip sd.img
 rm sd.img
 }
 
+do_elife_etn3431hdw() {
+echo " ################### Let's create a e-life et-n3431h-dw install image"
+new_image
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-elife_etn3431hdw_t31x_os03b10_ssv6155.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-elife_etn3431hdw_t31x_os03b10_ssv6155.bin
+
+#add files
+cp ${WD}/assets/jooan.sh  ${WD}/mnt
+wget -O busybox_static https://github.com/gtxaspec/wyze-neos-upgrade/raw/refs/heads/master/initramfs/bin/busybox
+wget https://github.com/themactep/thingino-firmware/raw/refs/heads/master/scripts/uniflasher.sh
+touch ${WD}/mnt/debug
+
+#create upload file
+cd ${WD}/tmp
+git clone https://github.com/0x0000z3r0/jooan.git
+cp ${WD}/assets/jooan_web_upgrade.sh ${WD}/tmp/jooan/generator/upgrade.sh
+cd ${WD}/tmp/jooan/generator/
+rm ./seg_last.sqfs
+mksquashfs ./upgrade.sh ./seg_last.sqfs -comp xz
+touch input_fw
+./jooan-package input_fw seg_last.sqfs jooan.fw
+cp ./jooan.fw ${WD}/mnt/upload.me
+rm -rf ${WD}/tmp/*
+cd ${WD}
+echo "upload upload.me to http://CAMERA_IP/apcam/adm/upload_firmware_test.asp or some other links u find in etc/webs/apcam/adm/" > ${WD}/mnt/readme
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/jooan.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o elife-etn3431hdw/elife-etn3431hdw-sd.zip sd.img
+rm sd.img
+}
+
+
 do_diagnostics() {
 echo " ### diag"
 new_image
