@@ -638,6 +638,39 @@ zip -o elife-etn3431hdw/elife-etn3431hdw-sd.zip sd.img
 rm sd.img
 }
 
+do_360_ap6pcm03() {
+echo " ################### Let's create a 360 ap6pcm03 install image"
+new_image
+
+cd ${WD}/tmp
+unzip -o ../assets/360-t31-initramfs-sd.zip
+cd ${WD}/tmp/initramfs_files
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_ap6pcm03_t31x_gc4653_eth+atbm6031.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_ap6pcm03_t31x_gc4653_eth+atbm6031.bin
+
+#thingino_image=$(ls thingino-*)
+#size=$(binwalk --include='squashfs' thingino-* |tr ',' '\n' |grep " size" |tr ':' '\n' |grep bytes |tr ' ' '\0' |tr 'b' '\n' |head -n 1)
+#blocksize=$(binwalk --include='squashfs' thingino-* |tr ',' '\n' |grep " blocksize" |tr ':' '\n' |grep bytes |tr ' ' '\0' |tr 'b' '\n' |head -n 1)
+#start=$(binwalk --include='squashfs' thingino-* |cut -d\  -f1 |tr '-' '\0')
+#start=$(echo $start |tr ' ' '\n' |tail -n1)
+#rm ./squash
+#dd if=$thingino_image of=squash bs=1 skip=$start count=$(($blocksize*($size/$blocksize +1)))
+cp ${WD}/assets/360-ap6pcm03.sh ${WD}/tmp/initramfs_files/initramfsrun.sh
+
+
+mv ${WD}/tmp/initramfs_files/ ${WD}/mnt/initramfs_files/
+mv ${WD}/tmp/uImage.uvc ${WD}/mnt/uImage.uvc
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/initramfs_files/initramfsrun.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_ddr128M.bin
+close_image
+zip -o 360-ap6pcm03/360-ap6pcm03-sd.zip sd.img
+rm sd.img
+}
 
 do_diagnostics() {
 echo " ### diag"
