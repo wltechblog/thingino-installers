@@ -672,6 +672,38 @@ zip -o 360-ap6pcm03/360-ap6pcm03-sd.zip sd.img
 rm sd.img
 }
 
+do_360_k7ts() {
+echo " ################### Let's create a 360 k7ts install image"
+new_image
+
+cd ${WD}/tmp
+unzip -o ../assets/motu-360-k7ts-initramfs-sd.zip
+cd ${WD}/tmp/initramfs_files
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_k7ts_t41nq_gc4023_eth.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_k7ts_t41nq_gc4023_eth.bin
+
+cp ${WD}/assets/360-k7ts.sh ${WD}/tmp/initramfs_files/initramfsrun.sh
+
+mv ${WD}/tmp/initramfs_files/ ${WD}/mnt/initramfs_files/
+mv ${WD}/tmp/update.mtpt ${WD}/mnt/update.mtpt
+mv ${WD}/tmp/motu-t41-nand.uImage ${WD}/mnt/motu-t41-nand.uImage
+echo "Press the reset button when connected to power." >> ${WD}/mnt/read.me
+echo "You might need to try two times." >> ${WD}/mnt/read.me
+echo "Don't use the update.mtpt on spi-nor devices, it will brick the device." >> ${WD}/mnt/read.me
+echo "The update.mtpt overwrite the uboot env in nand to boot motu-t41-nand.uImage for flashing and backup." >> ${WD}/mnt/read.me
+
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/initramfs_files/initramfsrun.sh
+
+cd ${WD}
+#add_uboot u-boot-isvp_t41_msc0_ddr128M.bin
+close_image
+zip -o 360-k7ts/360-k7ts-sd.zip sd.img
+rm sd.img
+}
+
 do_diagnostics() {
 echo " ### diag"
 new_image
