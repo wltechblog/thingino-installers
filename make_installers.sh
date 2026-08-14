@@ -548,6 +548,162 @@ zip -o wansview-w7/galayou-y4-t31l-sc2336-atbm6032.zip sd.img
 rm sd.img
 }
 
+do_h3c_c2041() {
+echo " ################### Let's create a h3c c2041 install image"
+new_image
+
+#add old uboot that fits to 256k mtd0
+cp ${WD}/assets/uboots/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.uboot.sha256sum  ${WD}/mnt
+cp ${WD}/assets/uboots/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.uboot  ${WD}/mnt
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_c2041_t31x_jxk04_eth+rtl8188ftv.bin
+cp ${WD}/assets/h3c.sh  ${WD}/mnt
+mkdir -p ${WD}/mnt/update/fireware/h3c_product_type/
+echo "busybox telnetd -l /bin/sh &" >> ${WD}/mnt/update/fireware/update.sh
+echo "sh /mnt/sd_card/h3c.sh >> /mnt/sd_card/h3clog &" >> ${WD}/mnt/update/fireware/update.sh
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/h3c.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o h3c-c2041/h3c-c2041-sd.zip sd.img
+rm sd.img
+}
+
+do_h3c_tc2100() {
+echo " ################### Let's create a h3c tc2100 install image"
+new_image
+
+#add old uboot that fits to 256k mtd0
+cp ${WD}/assets/uboots/thingino-h3c_tc2100_t31n_jxq03_eth+ssv6155.bin.uboot.sha256sum  ${WD}/mnt
+cp ${WD}/assets/uboots/thingino-h3c_tc2100_t31n_jxq03_eth+ssv6155.bin.uboot  ${WD}/mnt
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_tc2100_t31n_jxq03_eth+rtl8188ftv.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-h3c_tc2100_t31n_jxq03_eth+rtl8188ftv.bin
+cp ${WD}/assets/h3c.sh  ${WD}/mnt
+mkdir -p ${WD}/mnt/update/fireware/h3c_product_type/
+echo "busybox telnetd -l /bin/sh &" >> ${WD}/mnt/update/fireware/update.sh
+echo "sh /mnt/sd_card/h3c.sh >> /mnt/sd_card/h3clog &" >> ${WD}/mnt/update/fireware/update.sh
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/h3c.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o h3c-tc2100/h3c-tc2100-sd.zip sd.img
+rm sd.img
+}
+
+do_elife_etn3431hdw() {
+echo " ################### Let's create a e-life et-n3431h-dw install image"
+new_image
+
+cd ${WD}/mnt/
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-elife_etn3431hdw_t31x_os03b10_ssv6155.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-elife_etn3431hdw_t31x_os03b10_ssv6155.bin
+
+#add files
+cp ${WD}/assets/jooan.sh  ${WD}/mnt
+wget -O busybox_static https://github.com/gtxaspec/wyze-neos-upgrade/raw/refs/heads/master/initramfs/bin/busybox
+wget https://github.com/themactep/thingino-firmware/raw/refs/heads/master/scripts/uniflasher.sh
+touch ${WD}/mnt/debug
+
+#create upload file
+cd ${WD}/tmp
+git clone https://github.com/0x0000z3r0/jooan.git
+cp ${WD}/assets/jooan_web_upgrade.sh ${WD}/tmp/jooan/generator/upgrade.sh
+cd ${WD}/tmp/jooan/generator/
+rm ./seg_last.sqfs
+mksquashfs ./upgrade.sh ./seg_last.sqfs -comp xz
+touch input_fw
+./jooan-package input_fw seg_last.sqfs jooan.fw
+cp ./jooan.fw ${WD}/mnt/upload.me
+rm -rf ${WD}/tmp/*
+cd ${WD}
+echo "upload upload.me to http://CAMERA_IP/apcam/adm/upload_firmware_test.asp or some other links u find in etc/webs/apcam/adm/" > ${WD}/mnt/readme
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/jooan.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0.bin
+close_image
+zip -o elife-etn3431hdw/elife-etn3431hdw-sd.zip sd.img
+rm sd.img
+}
+
+do_360_ap6pcm03() {
+echo " ################### Let's create a 360 ap6pcm03 install image"
+new_image
+
+cd ${WD}/tmp
+unzip -o ../assets/360-t31-initramfs-sd.zip
+cd ${WD}/tmp/initramfs_files
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_ap6pcm03_t31x_gc4653_eth+atbm6031.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_ap6pcm03_t31x_gc4653_eth+atbm6031.bin
+
+#thingino_image=$(ls thingino-*)
+#size=$(binwalk --include='squashfs' thingino-* |tr ',' '\n' |grep " size" |tr ':' '\n' |grep bytes |tr ' ' '\0' |tr 'b' '\n' |head -n 1)
+#blocksize=$(binwalk --include='squashfs' thingino-* |tr ',' '\n' |grep " blocksize" |tr ':' '\n' |grep bytes |tr ' ' '\0' |tr 'b' '\n' |head -n 1)
+#start=$(binwalk --include='squashfs' thingino-* |cut -d\  -f1 |tr '-' '\0')
+#start=$(echo $start |tr ' ' '\n' |tail -n1)
+#rm ./squash
+#dd if=$thingino_image of=squash bs=1 skip=$start count=$(($blocksize*($size/$blocksize +1)))
+cp ${WD}/assets/360-ap6pcm03.sh ${WD}/tmp/initramfs_files/initramfsrun.sh
+
+
+mv ${WD}/tmp/initramfs_files/ ${WD}/mnt/initramfs_files/
+mv ${WD}/tmp/uImage.uvc ${WD}/mnt/uImage.uvc
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/initramfs_files/initramfsrun.sh
+
+cd ${WD}
+add_uboot u-boot-isvp_t31_msc0_ddr128M.bin
+close_image
+zip -o 360-ap6pcm03/360-ap6pcm03-sd.zip sd.img
+rm sd.img
+}
+
+do_360_k7ts() {
+echo " ################### Let's create a 360 k7ts install image"
+new_image
+
+cd ${WD}/tmp
+unzip -o ../assets/motu-360-k7ts-initramfs-sd.zip
+cd ${WD}/tmp/initramfs_files
+
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_k7ts_t41nq_gc4023_eth.bin.sha256sum
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-360_k7ts_t41nq_gc4023_eth.bin
+
+cp ${WD}/assets/360-k7ts.sh ${WD}/tmp/initramfs_files/initramfsrun.sh
+
+mv ${WD}/tmp/initramfs_files/ ${WD}/mnt/initramfs_files/
+mv ${WD}/tmp/update.mtpt ${WD}/mnt/update.mtpt
+mv ${WD}/tmp/motu-t41-nand.uImage ${WD}/mnt/motu-t41-nand.uImage
+echo "Press the reset button when connected to power." >> ${WD}/mnt/read.me
+echo "You might need to try two times." >> ${WD}/mnt/read.me
+echo "Don't use the update.mtpt on spi-nor devices, it will brick the device." >> ${WD}/mnt/read.me
+echo "The update.mtpt overwrite the uboot env in nand to boot motu-t41-nand.uImage for flashing and backup." >> ${WD}/mnt/read.me
+
+
+#enable flash
+sed -i 's/backup_only=1/backup_only=0/' ${WD}/mnt/initramfs_files/initramfsrun.sh
+
+cd ${WD}
+#add_uboot u-boot-isvp_t41_msc0_ddr128M.bin
+close_image
+zip -o 360-k7ts/360-k7ts-sd.zip sd.img
+rm sd.img
+}
+
 do_diagnostics() {
 echo " ### diag"
 new_image
