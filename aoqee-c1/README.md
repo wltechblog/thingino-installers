@@ -5,14 +5,16 @@
 This installer is not able to make a backup of your factory firmware, which is required if you ever want to revert. If you want that option,
 you will need to use a flash programmer to retrieve your image first.
 
-# There are currently TWO known version of this cam!
+# There are currently THREE known version of this cam!
 
-They changed the WIFI chip at some point with a new version, and it's not obvious from the outside which one you have. You can easily disassemble the camera to find out, or it's
-actually safe and easy to try one image and switch to the other if it doesn't come up on wifi.
+The installer image here is for the newest version, but can be installed on any device. If your hardware differs, it's easy to switch!
 
-If you bought your cam after September 2025, I suggest you try the 6062CU image first.
+If your cam powers up and announces the portal, but no wifi is visible on your phone, try switching to the aoqee_c1_t23n_sc2336_atbm6062 profile.
 
-if you chose the wrong one and need to switch, the easiest method to do so is to burn the other image and rename the file v4_all.bin to autoupdate-full.bin, then boot the cam with the card inserted!
+If you have wifi and provision the camera, but you don't have an image in the preview page, try switching to aoqee_c1_t23n_sc2331_atbm6062cu profile.
+
+Switching is easy! Go to https://unbricker.wltechblog.com/ and select your profile, burn the created image to your sd card, and boot with the card inserted. 
+You can ignore the docs about unbricking.
 
 # Using this installer
 Follow along in this video!

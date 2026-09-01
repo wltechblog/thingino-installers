@@ -22,7 +22,7 @@ rm sd-base.img
 new_image () {
 if [ ! -e sd-base.img ]
 then
-	dd if=/dev/zero of=sd-base.img bs=1M count=120
+	dd if=/dev/zero of=sd-base.img bs=1M count=1024
 	sudo sfdisk sd-base.img < sd.fdisk
 	LOOP=$(sudo losetup -f)
 	sudo losetup -P ${LOOP} sd-base.img 
@@ -141,6 +141,21 @@ get_asset https://github.com/themactep/thingino-firmware/releases/latest/downloa
 cd ${WD}
 close_image
 zip -o wuuk-y0510/wuuk-y0510-sd.zip sd.img
+rm sd.img
+}
+
+do_wuuk_y0910() {
+echo  "Let's create a Wuuk Y0510 install image"
+new_image
+cd ${WD}/mnt
+mkdir FACTORY
+cd FACTORY
+cp ${WD}/assets/wuuk-y0910-factory.sh factory_install.sh
+cd ${WD}/mnt/
+cp /tmp/thingino-wuuk_y0910_t41nq_sc4336p_atbm6031.bin autoupdate-full.bin
+cd ${WD}
+close_image
+zip -o wuuk-y0910/wuuk-y0910-sd.zip sd.img
 rm sd.img
 }
 
@@ -448,22 +463,12 @@ do_aoqee_c1() {
 echo " #### aoqee-c1"
 new_image
 cd ${WD}/mnt
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062.bin
-mv thingino-aoqee_c1_t23n_sc2336_atbm6062.bin  v4_all.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2331_atbm6062cu.bin
+mv thingino-aoqee_c1_t23n_sc2331_atbm6062cu.bin  v4_all.bin
 cd ${WD}
 add_uboot u-boot-isvp_t23n_msc0.bin
 close_image
-zip -o aoqee-c1/aoqee-c1-atbm6062.zip sd.img
-rm sd.img
-
-new_image
-cd ${WD}/mnt
-get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin
-mv thingino-aoqee_c1_t23n_sc2336_atbm6062cu.bin  v4_all.bin
-cd ${WD}
-add_uboot u-boot-isvp_t23n_msc0.bin
-close_image
-zip -o aoqee-c1/aoqee-c1-atbm6062cu.zip sd.img
+zip -o aoqee-c1/aoqee_c1_t23n_sc2331.zip sd.img
 rm sd.img
 }
 
