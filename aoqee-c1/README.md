@@ -11,7 +11,7 @@ The installer image here is for the newest version, but can be installed on any 
 
 If your cam powers up and announces the portal, but no wifi is visible on your phone, try switching to the aoqee_c1_t23n_sc2336_atbm6062 profile.
 
-If you have wifi and provision the camera, but you don't have an image in the preview page, try switching to aoqee_c1_t23n_sc2331_atbm6062cu profile.
+If you have wifi and provision the camera, but you don't have an image in the preview page, try switching to aoqee_c1_t23n_sc2336_atbm6062cu profile.
 
 Switching is easy! Go to https://unbricker.wltechblog.com/ and select your profile, burn the created image to your sd card, and boot with the card inserted. 
 You can ignore the docs about unbricking.
