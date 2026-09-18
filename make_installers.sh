@@ -42,7 +42,7 @@ sudo mount -o user,uid=${ID} ${PART} mnt
 
 add_uboot() {
 UBOOT=$1
-get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2025-09-11/${UBOOT}
+get_asset https://github.com/gtxaspec/ingenic-u-boot-xburst1/releases/download/uboot-xb1-2026-05-02/${UBOOT}
 sudo dd if=${WD}/tmp/${UBOOT} of=${LOOP} bs=512 seek=34 #add mmc recovery
 rm ${UBOOT}
 }
@@ -84,7 +84,7 @@ WD=$(pwd)
 new_image
 cd ${WD}/tmp
 #get_asset https://github.com/gtxaspec/wyze-neos-upgrade/actions/runs/13273116581/artifacts/2574761777 -O installer.zip
-unzip -o ../assets/wz-neos-upgrader.zip 
+unzip -o ${WD}/assets/wz-neos-upgrader.zip -d ${WD}/tmp
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t20 factory_ZMC6tiIDQN
 cp ${WD}/assets/demo.bin .
@@ -100,7 +100,7 @@ do_wyze_v3() {
 echo " ################### Let's create a Wyze V3 install image"
 new_image
 cd ${WD}/tmp
-unzip -o ../assets/wz-neos-upgrader.zip 
+unzip -o ${WD}/assets/wz-neos-upgrader.zip -d ${WD}/tmp
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
 get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam3_t31al_gc2053_atbm6031.bin
@@ -300,6 +300,7 @@ rm sd.img
 do_wyze_cp1() {
 echo " ################### Let's create a Wyze Cam Pan V1 installer"
 WD=$(pwd)
+unzip -o ${WD}/assets/wz-neos-upgrader.zip -d ${WD}/tmp
 new_image
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t20 factory_ZMC6tiIDQN
@@ -315,6 +316,7 @@ rm sd.img
 do_wyze_cp2() {
 echo " ################### Let's create a Wyze Cam Pan V2 instllaer"
 WD=$(pwd)
+unzip -o ${WD}/assets/wz-neos-upgrader.zip -d ${WD}/tmp
 new_image
 cd ${WD}/mnt
 cp ${WD}/tmp/uImage.lzma-t31 factory_t31_ZMC6tiIDQN
