@@ -1,4 +1,4 @@
-# SONOFF CAm Outdoor B1P
+# SONOFF Cam Outdoor B1P
 
 # This image will upgrade your camera from factory firmware to Thingino. Don't try to use this for upgrading afterwards!
 
@@ -14,7 +14,7 @@ in the future. Each camera has a unique firmware, so if you're doing multiple ca
 
 # Installation 
 1. Flash an SD card using the [Thingino Installer for the Sonoff Cam Outdoor camera](https://github.com/wltechblog/thingino-installers/tree/main/sonoff-outdoor-b1p), and insert it into the camera.
-2. Use a 'dumb' USB-C cable for power only to boot the camera. Avoid using one with handshakes as they can cause confusion during the flashing process.
+2. Power on the camera using the attached USB cable.
 3. After a few minutes, the camera will begin updating its firmware. Once complete, a new WiFi network should appear called 'THING-xxx'; connect to this to access the web interface for configuration.  Refer to the [Wi-Fi Configuration Guide](https://github.com/themactep/thingino-firmware/wiki/Configuration:-Wi%E2%80%90Fi-Access#captive-portal) for further directions.
 4. On checking the SD card files, there should be a new file now called 'autoupdate-full.done', which indicates the firmware process has completed.
 5. This process is reversible.  To revert back to the factory firmware, you will find a folder named 'backup' on the SD card.  Save this folder separately for each camera you work with, as each camera has its unique firmware version.
