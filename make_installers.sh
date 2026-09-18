@@ -314,7 +314,7 @@ rm sd.img
 }
 
 do_wyze_cp2() {
-echo " ################### Let's create a Wyze Cam Pan V2 instllaer"
+echo " ################### Let's create a Wyze Cam Pan V2 installer"
 WD=$(pwd)
 unzip -o ${WD}/assets/wz-neos-upgrader.zip -d ${WD}/tmp
 new_image
