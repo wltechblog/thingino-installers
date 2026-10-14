@@ -22,7 +22,7 @@ rm sd-base.img
 new_image () {
 if [ ! -e sd-base.img ]
 then
-	dd if=/dev/zero of=sd-base.img bs=1M count=1024
+	dd if=/dev/zero of=sd-base.img bs=1M count=256
 	sudo sfdisk sd-base.img < sd.fdisk
 	LOOP=$(sudo losetup -f)
 	sudo losetup -P ${LOOP} sd-base.img 
@@ -109,6 +109,19 @@ get_asset https://github.com/themactep/thingino-firmware/releases/latest/downloa
 cd ${WD}
 close_image
 zip -o wyze-cam-3/wyze-cam-3-sd.zip sd.img
+rm sd.img
+}
+
+do_wyze_v4() {
+echo " ################### Let's create a Wyze V4 install image"
+new_image
+cd ${WD}/mnt
+cp ../assets/factory_wcv4_uvc .
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam4_t41nq_os04d10_atbm6062s.bin
+get_asset https://github.com/themactep/thingino-firmware/releases/latest/download/thingino-wyze_cam4_t41nq_gc4653_atbm6062s.bin
+cd ${WD}
+close_image
+zip -o wyze-cam-4/wyze-cam-4-sd.zip sd.img
 rm sd.img
 }
 
