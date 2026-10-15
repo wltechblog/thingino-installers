@@ -21,7 +21,7 @@ This camera is supported on Thingino's MASTER branch, which has many new compone
 produce updated firmware builds directly for it at this time, but you can always build locally or use our image builder at https://image-builder.thingino.com/
 
 Also, there at at least TWO variants of this camera. I have ONE of them. The difference is the image sensor, and the installer attempts to detect it. It works
-perfecty on my model with the os04d10 sensor, and we expect it will work with the gx4653 but as of yet I haven't confirmed this. If your install fails,
+perfecty on my model with the os04d10 sensor, and we expect it will work with the gc4653 but as of yet I haven't confirmed this. If your install fails,
 this is probably why and I need you to send methe log from the sd card to fix it!
 
 # Installation Steps
